@@ -277,7 +277,7 @@ Instead, they serve as practical candidates for future product quality investiga
 
 The dashboard summarizes the main findings of this project, including customer segmentation, cohort retention, product analysis, hypothesis testing, and overall business KPIs.
 
-![Executive Overview](IMG_4806.jpg)
+![Executive Overview](images/IMG_4806.jpg)
 
 ---
 
