@@ -283,7 +283,7 @@ The dashboard summarizes the main findings of this project, including customer s
 ![Customer Segmentation](images/Customer%20Segmentation%20.jpg)
 
 
-![Cohort Analysis.jpg](images/Cohort%20Analysis.jpg.jpg)
+![Cohort Analysis.jpg](images/Cohort%20Analysis.jpg)
 
 
 ---
