@@ -1,85 +1,107 @@
-# Retention-behavior-and-churn-driver-analysis
+# Customer Retention & Churn Driver Analysis with Churn-Associated Product Identification
 
-
-> Customer Retention Analysis using Python, Statistical Analysis, Excel, and Power BI to identify customer churn behaviour and provide actionable business recommendations.
+> An end-to-end customer retention analysis using Python, Excel, statistical testing, and Power BI to understand customer churn, prioritize retention efforts, and identify products that may require further business investigation.
 
 ---
 
 # Project Overview
 
-Customer retention plays a signuficant role to the long-term growth for most bussiness. Acquiring a new customer is typically more expensive than retaining an already existing one, and retaining cost is also typically more expensive than gaining back the customer that churn away. It is therefore it is an important strategic move to identify the cause behind the customer-churned behavior and prevent the loss of customer and revenue in time.
+Keeping existing customers is usually much cheaper than acquiring new ones. Because of that, customer retention is one of the most important business problems for most e-commerce companies.
 
-This project aims to explore churn behavior, prioritize the high risk groups, investigate potential reason behind churn, and identify the individual-level 'churn associated' or 'red flag' products for potential futher investigation and intervention
+In this project, I explored customer retention from both customer and product perspectives. Instead of building a churn prediction model, the goal is to understand how customers behave, identify which customer groups should be prioritized, investigate possible churn drivers, and flag products that appear disproportionately among churn-prone customers.
 
-The analysis combines data processing, cohort analysis, statistical hypothesis tesing, and product-level investigation. This report is  devided into 3 sections: Business 
-1. Problem and Work Flow,
+The project combines Python, Excel, statistical hypothesis testing, and Power BI into a single business-oriented analytics workflow.
+
+The project is organized into three parts:
+
+1. Business Problem & Workflow
 2. Methodology
-3. Business Findings and Conclusion
+3. Business Findings & Conclusion
 
 ---
 
-# Table of content
+# Table of Contents
 
->Part I: Business Problem and Work Flow
-
->Part II : Methodology
-
->Part III : Business Findings and Conclusion
-
-
+- Part I : Business Problem & Workflow
+- Part II : Methodology
+- Part III : Business Findings & Conclusion
 
 ---
 
-# Part I: Business Problem and Work Flow
+# Part I : Business Problem & Workflow
+
 ## Business Problem
-The objective of this project is to indentify the possibility to improve the customer retention by
-- Identifying the pattern behind churn behavior
-- Prioritizing customer group based on their retention pattern with intervention
-- Investigate the potential churn driver
-- Identifying products associated with customer churn
+
+This project tries to answer four practical business questions related to customer retention.
+
+Instead of only describing customer behaviour, the analysis focuses on producing findings that can support future marketing, customer retention, and product decisions.
+
+The main objectives are to
+
+- Understand overall customer retention behaviour
+- Identify customer groups that should be prioritized
+- Investigate potential churn drivers
+- Identify products associated with customer churn
+
+---
 
 ## Business Questions
 
-### 1. How does customer churn behave?
+### 1. How does customer retention behave?
 
-The project investigate general churn behavior and answer questions such as
-- What is customer churn rate?
-- How much revenue has been lost due to customer churn?
-- How much revenue could be saved if we can protect 'at risk customer' from churning?
-- What is the average customer lifespan
-- Which aquistioned cohorts perform poorly
+The first step is understanding the overall retention performance of the business.
+
+Questions answered in this section include
+
+- What is the overall customer churn rate?
+- Which acquisition cohorts perform poorly?
+- When do customers typically leave?
+- How are customers distributed across different retention segments?
+- What do the overall business KPIs look like?
+
+---
 
 ### 2. Which customers should be prioritized?
-Customer prioritization is conducted using customer segmentation assisted by RFM analysis.
 
-We identify
-- High-value customer
-- Customer at risk or churn
-- Customer needing immediate retention campaigns
+Not every customer should receive the same retention strategy.
 
-### 3. Why do customers churn?
+Customers are segmented using RFM analysis to identify business-oriented customer groups, including
 
-Several hypotheses are statistically tested to determined if churn bahavior is associated with
-- Spending bahavior
-- Discount campaign
+- VIP Customers
+- Cannot Lose Customers
+- At Risk Customers
+- Low Engagement Customers
+- Lost Customers
+
+These groups are later used to prioritize retention campaigns and business resources.
+
+---
+
+### 3. What factors are related to customer churn?
+
+Several business hypotheses are tested to see whether customer groups behave differently.
+
+The analysis compares customer groups based on
+
+- Purchase amount
+- Discount amount
 - Shipping fee
-- Waiting shipment time
-- Product-page session duration
+- Shipping waiting time
+- Product-page engagement
 
-Not just assumtions
+Instead of relying on assumptions, every hypothesis is evaluated using an independent two-sample t-test.
 
-Each hypothesis is evaluated by statistical tools
+---
 
 ### 4. Which products are associated with customer churn?
 
-Products are futher investigated to determine whether some products appear disprotionately among churn-prone customer
+Besides customer behaviour, this project also investigates products.
 
-This includes two business concepts
-- Churn-associated products
-- Retention-friendly product
+Some products appear much more frequently among churn-prone customers than others. Those products are flagged as **Churn-associated Products** and become candidates for further business investigation.
 
+Products that appear more frequently among retained customers are classified as **Retention-friendly Products** and may be considered for future marketing exposure.
 
-These findings can support future product quality investigation and marketing campaigns
+The objective is not to prove causality, but to generate a practical shortlist for future product quality reviews and business decisions.
 
 ---
 
@@ -88,109 +110,167 @@ These findings can support future product quality investigation and marketing ca
 | Item | Description |
 |------|-------------|
 | Business Domain | E-commerce |
-| Transactions | |
-| Features | |
-| Observation unit |Order ID|
-| Period |From 2021-2026|
+| Observation Unit | Order ID |
+| Time Period | 2021–2026 |
+| Analysis Tools | Python, Excel, Power BI |
+| Python Libraries | Pandas, NumPy, SciPy, Matplotlib |
 
 ---
 
-## Project Workflow
+## Analytical Workflow
 
 ```text
-Raw Data
-     ↓
-Data Cleaning
-     ↓
-EDA
-     ↓
+Raw Transaction Data
+│
+▼
+Data Cleaning & Processing
+│
+▼
+Business Overview
+│
+▼
 Cohort Analysis
-     ↓
+│
+▼
 RFM Analysis
-     ↓
+│
+▼
 Customer Segmentation
-     ↓
+│
+▼
 Group Analysis
-     ↓
-Hypothesis Testing
-     ↓
+│
+▼
+Statistical Hypothesis Testing
+│
+▼
 Product Investigation
-     ↓
+│
+▼
 Business Insights
-     ↓
-Dashboard
+│
+▼
+Power BI Dashboard
 ```
 
 ---
 
-## Business Definitions
+# Part II : Methodology
 
-### Customer Churn
+## Data Cleaning & Processing
 
-...
+The project starts with cleaning and preparing the transaction data before any analysis is performed.
 
-### At Risk Customer
+The preprocessing stage includes
 
-...
-
-### Cannot Lose Customer
-
-...
-
-### VIP customer
-
-...
-
-### normal customer
-
-...
-
-### 
-
-...
-
-### Churn-associated Product
-
-...
+- Handling missing values
+- Correcting data types
+- Removing inconsistent records
+- Creating derived variables
+- Preparing customer-level features for downstream analysis
 
 ---
 
-# Methodology
+## Business Overview
 
-## Data Cleaning
+A general business overview is created before moving into customer-level analysis.
 
-...
+This section summarizes
 
-## Exploratory Data Analysis
+- Revenue
+- Orders
+- Customers
+- Product categories
+- Payment methods
+- Monthly business trends
+- Core business KPIs
 
-...
+The purpose is to understand the overall structure of the business before investigating retention behaviour.
+
+---
 
 ## Cohort Analysis
 
-...
+Cohort analysis is used to measure customer retention over time and compare acquisition cohorts.
 
-## RFM Analysis
+The analysis focuses on
 
-...
+- Customer retention by cohort
+- Cohort lifetime
+- Retention curves
+- Cohort performance comparison
 
-## Customer Segmentation
-
-...
-
-## Group Analysis
-
-...
-
-## Statistical Hypothesis Testing
-
-...
-
-## Product Investigation
-
-...
+The cohort calculation was implemented in Python and independently verified in Microsoft Excel as a validation step.
 
 ---
 
+## RFM Analysis
+
+Customer value is measured using the Recency, Frequency, and Monetary (RFM) framework.
+
+Each customer receives an RFM score that is later used for customer segmentation.
+
+---
+
+## Customer Segmentation
+
+Customers are grouped into business-oriented segments based on their RFM scores.
+
+The segmentation includes
+
+- VIP
+- Cannot Lose
+- At Risk
+- Low Engagement
+- Lost
+
+These segments become the foundation for all subsequent analyses.
+
+---
+
+## Group Analysis
+
+After segmentation, customer groups are compared across multiple dimensions.
+
+This includes
+
+- Product category preference
+- Payment method
+- Purchase behaviour
+- Correlation between RFM variables
+
+The objective is to identify behavioural differences between customer groups.
+
+---
+
+## Statistical Hypothesis Testing
+
+Several business hypotheses are tested using independent two-sample t-tests.
+
+The variables tested include
+
+- Purchase amount
+- Discount amount
+- Shipping fee
+- Shipping waiting time
+- Product-page engagement
+
+The goal is to determine whether the observed differences between customer groups are statistically significant rather than random variation.
+
+---
+
+## Product Investigation
+
+The final analysis shifts from customer-level behaviour to product-level behaviour.
+
+Products are compared across customer segments to identify
+
+- Churn-associated Products
+- Retention-friendly Products
+
+These products are not interpreted as direct causes of customer churn.
+
+Instead, they serve as practical candidates for future product quality investigation, customer feedback analysis, and business intervention
 # Part III: Business Findings and Conclusion
 
 ## Dashboard
